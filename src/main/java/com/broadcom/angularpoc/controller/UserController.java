@@ -46,13 +46,15 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping(value = "/login")
-	public ResponseEntity<Login> login(@RequestBody Login login) {
+	public ResponseEntity<User> login(@RequestBody Login login) {
 		User user = userRegistrationImpl.login(login.getEmail(), login.getPassword());
 		if (user != null) {
-			return new ResponseEntity<Login>(login, HttpStatus.OK);
+			return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
-		return new ResponseEntity<Login>(login, HttpStatus.NOT_ACCEPTABLE);
-
+		else {
+			user=null;		
+		return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
+		}
 	}
 
 

@@ -46,12 +46,13 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
+
+	public String getName() {
 		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.name = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {

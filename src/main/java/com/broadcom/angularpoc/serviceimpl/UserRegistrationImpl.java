@@ -19,6 +19,7 @@ public class UserRegistrationImpl implements UserRegistration{
 		List<User> existingUser = userRepository.findByEmail(user.getEmail());
 		if(existingUser.isEmpty()) {
 			userRepository.save(user);
+			String s= null;
 			return true;
 		}
 		else {
